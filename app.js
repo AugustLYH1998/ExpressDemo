@@ -5,7 +5,10 @@ const app = express()
 
 /* 可以处理表单的数据 */
 // 配置解析表单数据的中间件
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
+
+// 解析json的中间件
+app.use(express.json());
 
 /* 用于处理客户端通过 JSONP 方式请求数据 */
 // 必须在配置 cors 中间件之前，配置 JSONP 的接口
